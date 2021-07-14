@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
-
+import {Router,Link} from '@reach/router'
+import Home from './components/Home'
+import Param from './components/Param'
+import Multiple from './components/Multiple'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Link to="/Home">Home</Link>
+      <Router>
+          <Home path="/Home" />
+          <Param path="/:param" />
+          <Multiple path="/:word/:color/:backgroundColor" />
+      </Router>
     </div>
   );
 }
